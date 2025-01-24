@@ -11,11 +11,13 @@ export interface IBlog {
   tag: ICategoryAndTag;
   image: { url: string };
   content: { html: string };
+  slug: string;
 }
 
 export interface IAuthor {
   name: string;
   image: { url: string };
+  bio: string;
 }
 
 export interface ICategoryAndTag {

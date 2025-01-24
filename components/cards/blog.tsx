@@ -1,6 +1,6 @@
 import { cn, getReadingTime } from "@/lib/utils";
 import { IBlog } from "@/types";
-import { CalendarDays, Clock, Dot, Minus } from "lucide-react";
+import { CalendarDays, Clock, Dot, Layers2, List, Minus, Tag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
@@ -68,7 +68,14 @@ function BlogCard(blog: Props) {
           <div className="flex items-center gap-2">
             <Link href={`/tags/${blog.tag.slug}`}>
               <Badge variant={"secondary"} role="button">
+                <Tag className="me-1 h-3 w-3" />
                 {blog.tag.name}
+              </Badge>
+            </Link>
+            <Link href={`/categories/${blog.category.slug}`}>
+              <Badge variant={"default"} role="button">
+                <Layers2 className="me-1 h-3 w-3" />
+                {blog.category.name}
               </Badge>
             </Link>
           </div>

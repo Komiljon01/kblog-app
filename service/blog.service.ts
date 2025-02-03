@@ -46,6 +46,7 @@ export const getDetailedBlog = async (slug: string) => {
         author {
           name
           bio
+          id
           image {
             url
           }

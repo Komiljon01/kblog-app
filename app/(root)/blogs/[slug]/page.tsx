@@ -100,7 +100,7 @@ async function SlugPage({ params }: { params: { slug: string } }) {
             {blog.author.bio}
           </p>
           <Link
-            href={"/"}
+            href={`/author/${blog.author.id}`}
             className="flex items-center gap-2 underline transition-colors hover:text-blue-500"
           >
             <span>See all posts by this author</span>

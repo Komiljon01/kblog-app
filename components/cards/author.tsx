@@ -1,12 +1,16 @@
 import { IAuthor } from "@/types";
 import Image from "next/image";
+import Link from "next/link";
 
 function AuthorCard(author: IAuthor) {
   return (
-    <div className="flex w-52 flex-col space-y-2 text-center">
+    <Link
+      href={`/author/${author.id}`}
+      className="flex w-52 flex-col space-y-2 text-center"
+    >
       <div className="relative h-52 w-full">
         <Image
-          src={author.image}
+          src={author.image.url}
           alt={author.name}
           fill
           className="rounded-md object-cover grayscale transition-all hover:grayscale-0"
@@ -14,9 +18,10 @@ function AuthorCard(author: IAuthor) {
       </div>
       <h2 className="font-creteRound text-2xl">{author.name}</h2>
       <p className="text-muted-foreground">
-        <span className="font-bold text-white">04</span> Published posts
+        <span className="font-bold text-white">{author.blogs.length}</span>{" "}
+        Published posts
       </p>
-    </div>
+    </Link>
   );
 }
 
